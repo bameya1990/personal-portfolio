@@ -1,0 +1,74 @@
+---
+---
+
+<canvas
+  id="wave-bg"
+  style="position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;"
+></canvas>
+
+<script>
+  (function () {
+    const canvas = document.getElementById("wave-bg") as HTMLCanvasElement;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d")!;
+    let frame = 0;
+    let lastTime = 0;
+
+    // Five wave layers spread across the viewport height
+    // Very low opacity, long wavelengths, slow speeds — calm effect
+    const waves = [
+      { yFrac: 0.12, amp: 35, freq: 0.0028, speed: 0.9,  alpha: 0.040 },
+      { yFrac: 0.30, amp: 50, freq: 0.0022, speed: 0.65, alpha: 0.032 },
+      { yFrac: 0.50, amp: 42, freq: 0.0032, speed: 0.80, alpha: 0.036 },
+      { yFrac: 0.68, amp: 55, freq: 0.0020, speed: 0.55, alpha: 0.030 },
+      { yFrac: 0.85, amp: 38, freq: 0.0030, speed: 0.70, alpha: 0.034 },
+    ];
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    function draw(timestamp: number) {
+      // ~24 fps — plenty smooth for slow calm waves
+      if (timestamp - lastTime < 42) {
+        requestAnimationFrame(draw);
+        return;
+      }
+      lastTime = timestamp;
+
+      // White background
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      const t = frame * 0.012;
+
+      waves.forEach((w) => {
+        const baseY = canvas.height * w.yFrac;
+
+        ctx.beginPath();
+        const startY = baseY + Math.sin(t * w.speed) * w.amp;
+        ctx.moveTo(0, startY);
+
+        for (let x = 1; x <= canvas.width; x += 2) {
+          const y = baseY + Math.sin(x * w.freq + t * w.speed) * w.amp;
+          ctx.lineTo(x, y);
+        }
+
+        ctx.lineTo(canvas.width, canvas.height + 60);
+        ctx.lineTo(0, canvas.height + 60);
+        ctx.closePath();
+
+        ctx.fillStyle = `rgba(0, 0, 0, ${w.alpha})`;
+        ctx.fill();
+      });
+
+      frame++;
+      requestAnimationFrame(draw);
+    }
+
+    window.addEventListener("resize", resize);
+    resize();
+    requestAnimationFrame(draw);
+  })();
+</script>

@@ -1,4 +1,6 @@
 ---
+import WaveBackground from '../components/WaveBackground.astro';
+
 interface Props {
   title: string;
   description?: string;
@@ -29,7 +31,8 @@ const { title, description = "Ameya Bongale — Product Manager | Ex-Shopify" } 
       html { scroll-behavior: smooth; }
     </style>
   </head>
-  <body class="bg-white text-gray-900 antialiased">
+  <body class="text-gray-900 antialiased">
+    <WaveBackground />
     <slot />
   </body>
 </html>
