@@ -82,51 +82,47 @@ const education = [
       Experience & Education
     </h2>
 
-    <div class="grid lg:grid-cols-[3fr_2fr] gap-16 items-start">
+    <div class="grid lg:grid-cols-[3fr_2fr] gap-px bg-gray-100">
 
       <!-- Work history -->
-      <div>
-        <p class="text-xs font-semibold tracking-widest uppercase text-gray-300 mb-8">Work</p>
-        <div class="space-y-10">
-          {experiences.map((exp) => (
-            <div class="grid grid-cols-[1fr_auto] gap-4">
+      <div class="grid gap-px bg-gray-100">
+        {experiences.map((exp) => (
+          <div class="bg-white p-8 hover:bg-gray-50 transition-colors">
+            <div class="flex items-start justify-between gap-4 mb-3">
               <div>
                 <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-0.5">
                   {exp.company}
                 </p>
-                <p class="text-sm font-medium text-gray-900 mb-3">{exp.role}</p>
-                <ul class="space-y-1.5">
-                  {exp.highlights.map((h) => (
-                    <li class="text-sm text-gray-500 leading-relaxed pl-3 border-l border-gray-200">
-                      {h}
-                    </li>
-                  ))}
-                </ul>
+                <p class="text-sm font-medium text-gray-900">{exp.role}</p>
               </div>
-              <p class="text-xs text-gray-400 whitespace-nowrap pt-0.5">{exp.period}</p>
+              <p class="text-xs text-gray-400 whitespace-nowrap pt-0.5 shrink-0">{exp.period}</p>
             </div>
-          ))}
-        </div>
+            <ul class="space-y-1.5 mt-3">
+              {exp.highlights.map((h) => (
+                <li class="text-sm text-gray-500 leading-relaxed pl-3 border-l border-gray-200">
+                  {h}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
 
       <!-- Education + about -->
-      <div class="space-y-12">
-        <div>
-          <p class="text-xs font-semibold tracking-widest uppercase text-gray-300 mb-8">Education</p>
-          <div class="space-y-8">
-            {education.map((edu) => (
-              <div>
-                <p class="text-xs text-gray-400 mb-0.5">{edu.period}</p>
-                <p class="text-sm font-medium text-gray-900 mb-0.5">{edu.institution}</p>
-                <p class="text-sm text-gray-600 mb-1">{edu.degree}</p>
-                <p class="text-xs text-gray-400 leading-relaxed">{edu.detail}</p>
-              </div>
-            ))}
+      <div class="grid gap-px bg-gray-100">
+        {education.map((edu) => (
+          <div class="bg-white p-8 hover:bg-gray-50 transition-colors">
+            <p class="text-xs text-gray-400 mb-2">{edu.period}</p>
+            <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-0.5">
+              {edu.institution}
+            </p>
+            <p class="text-sm font-medium text-gray-900 mb-2">{edu.degree}</p>
+            <p class="text-xs text-gray-400 leading-relaxed">{edu.detail}</p>
           </div>
-        </div>
+        ))}
 
-        <div class="pt-8 border-t border-gray-100">
-          <p class="text-xs font-semibold tracking-widest uppercase text-gray-300 mb-4">About</p>
+        <div class="bg-white p-8 hover:bg-gray-50 transition-colors">
+          <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-3">About</p>
           <p class="text-sm text-gray-500 leading-relaxed">
             Versatile PM known for taking on mission-critical initiatives and delivering with resourcefulness and creativity. I bridge technical complexity and business value — from 0→1 builds to platform-scale optimization.
           </p>
