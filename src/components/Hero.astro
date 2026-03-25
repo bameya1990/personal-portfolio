@@ -1,163 +1,68 @@
 ---
 ---
 
-<section
-  class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20"
->
-  <!-- Animated gradient blobs -->
-  <div class="absolute inset-0 -z-10 overflow-hidden">
-    <div
-      class="absolute top-1/4 left-[15%] w-[500px] h-[500px] bg-violet-700/20 rounded-full blur-[100px] animate-pulse"
-    ></div>
-    <div
-      class="absolute bottom-1/4 right-[15%] w-[400px] h-[400px] bg-cyan-600/15 rounded-full blur-[100px]"
-      style="animation: pulse 5s ease-in-out 2s infinite;"
-    ></div>
-    <div
-      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-violet-900/10 rounded-full blur-[120px]"
-    ></div>
-  </div>
+<section class="min-h-screen flex flex-col justify-center pt-20 pb-16">
+  <div class="max-w-5xl mx-auto px-6 w-full">
 
-  <!-- Subtle grid pattern -->
-  <div
-    class="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#27272a18_1px,transparent_1px),linear-gradient(to_bottom,#27272a18_1px,transparent_1px)] bg-[size:72px_72px]"
-  ></div>
-
-  <div class="max-w-5xl mx-auto px-6 text-center">
-    <!-- Status badge -->
-    <div
-      class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-300 text-sm font-medium mb-10"
-    >
-      <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-      Open to new opportunities
-    </div>
-
-    <!-- Main headline -->
-    <h1 class="font-['Syne'] font-black tracking-tight leading-[1.05] mb-6">
-      <span class="block text-5xl md:text-7xl lg:text-[88px] text-zinc-100 mb-3"
-        >Hi, I'm Ameya.</span
-      >
-      <span class="block text-4xl md:text-5xl lg:text-6xl text-zinc-300">
-        I build products that
-        <span
-          class="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent"
-          >drive revenue.</span
-        >
-      </span>
+    <!-- Name -->
+    <h1 class="text-5xl md:text-7xl font-bold text-gray-900 leading-tight tracking-tight mb-8">
+      Ameya Bongale.
     </h1>
 
-    <!-- Sub-copy -->
-    <p
-      class="max-w-2xl mx-auto text-lg md:text-xl text-zinc-400 mb-10 leading-relaxed"
-    >
-      Product Manager with 7+ years delivering SaaS products in e-commerce,
-      logistics & payments.<br class="hidden md:block" />
-      <span class="text-zinc-300 font-medium">Ex-Shopify</span> ·
-      <span class="text-zinc-300 font-medium">University of Michigan</span>
+    <!-- Role description — mirrors the reference site's pattern -->
+    <p class="text-xl md:text-2xl font-light text-gray-600 max-w-2xl leading-relaxed mb-10">
+      Product Manager who is Revenue-Focused,<br class="hidden md:block" />
+      Platform-Savvy, and Execution-Oriented.
     </p>
 
-    <!-- Impact stats row -->
-    <div
-      class="flex flex-wrap justify-center gap-8 mb-12 py-6 border-y border-zinc-800/60"
-    >
-      <div class="text-center">
-        <div
-          class="font-['Syne'] text-3xl font-black bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent"
-        >
-          $3B+
-        </div>
-        <div class="text-xs text-zinc-500 mt-0.5">Revenue Platform</div>
-      </div>
-      <div class="hidden md:block w-px bg-zinc-800"></div>
-      <div class="text-center">
-        <div
-          class="font-['Syne'] text-3xl font-black bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent"
-        >
-          $2.9M+
-        </div>
-        <div class="text-xs text-zinc-500 mt-0.5">Incremental Revenue</div>
-      </div>
-      <div class="hidden md:block w-px bg-zinc-800"></div>
-      <div class="text-center">
-        <div
-          class="font-['Syne'] text-3xl font-black bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent"
-        >
-          7+
-        </div>
-        <div class="text-xs text-zinc-500 mt-0.5">Years Experience</div>
-      </div>
-      <div class="hidden md:block w-px bg-zinc-800"></div>
-      <div class="text-center">
-        <div
-          class="font-['Syne'] text-3xl font-black bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent"
-        >
-          95%
-        </div>
-        <div class="text-xs text-zinc-500 mt-0.5">Forecast Accuracy</div>
-      </div>
-    </div>
+    <!-- Short bio -->
+    <p class="text-base text-gray-500 max-w-xl leading-relaxed mb-12">
+      7+ years delivering SaaS products in e-commerce, logistics, and payments.
+      Ex-Shopify · University of Michigan.
+    </p>
 
     <!-- CTAs -->
-    <div class="flex flex-wrap gap-4 justify-center mb-12">
+    <div class="flex flex-wrap gap-4 items-center mb-16">
       <a
         href="#projects"
-        class="px-8 py-3.5 bg-gradient-to-r from-violet-600 to-cyan-600 rounded-xl font-semibold text-white hover:opacity-90 transition-all duration-200 hover:scale-105 shadow-lg shadow-violet-600/20"
+        class="bg-gray-900 text-white text-sm font-medium px-6 py-3 hover:bg-gray-700 transition-colors"
       >
-        View My Work ↓
+        View My Work
       </a>
       <a
         href="/resume.pdf"
         download
-        class="px-8 py-3.5 border border-zinc-700 rounded-xl font-semibold text-zinc-300 hover:border-violet-500/60 hover:text-white transition-all duration-200 hover:scale-105"
+        class="border border-gray-300 text-gray-700 text-sm font-medium px-6 py-3 hover:border-gray-500 hover:text-gray-900 transition-colors"
       >
         Download Resume
       </a>
     </div>
 
     <!-- Social links -->
-    <div class="flex items-center justify-center gap-2 text-zinc-500 text-sm">
+    <div class="flex items-center gap-6 pt-6 border-t border-gray-100">
       <a
         href="https://www.linkedin.com/in/ameyabongale/"
         target="_blank"
         rel="noopener noreferrer"
-        class="px-3 py-1.5 rounded-lg hover:text-violet-400 hover:bg-violet-400/10 transition-all duration-200 font-medium"
-        >LinkedIn</a
+        class="text-sm text-gray-400 hover:text-gray-900 transition-colors"
       >
-      <span class="text-zinc-700">·</span>
+        LinkedIn
+      </a>
       <a
         href="https://github.com/bameya1990"
         target="_blank"
         rel="noopener noreferrer"
-        class="px-3 py-1.5 rounded-lg hover:text-violet-400 hover:bg-violet-400/10 transition-all duration-200 font-medium"
-        >GitHub</a
+        class="text-sm text-gray-400 hover:text-gray-900 transition-colors"
       >
-      <span class="text-zinc-700">·</span>
+        GitHub
+      </a>
       <a
         href="mailto:ameya.bongale@protonmail.com"
-        class="px-3 py-1.5 rounded-lg hover:text-violet-400 hover:bg-violet-400/10 transition-all duration-200 font-medium"
-        >Email</a
+        class="text-sm text-gray-400 hover:text-gray-900 transition-colors"
       >
+        Email
+      </a>
     </div>
-  </div>
 
-  <!-- Scroll indicator -->
-  <div
-    class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-zinc-700 animate-bounce"
-  >
-    <span class="text-xs tracking-widest uppercase">scroll</span>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M19 9l-7 7-7-7"></path>
-    </svg>
   </div>
 </section>

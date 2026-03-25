@@ -1,119 +1,89 @@
 ---
 const projects = [
   {
+    number: "01",
     company: "Shopify",
-    year: "2022–2024",
     title: "Subscription Platform",
+    impact: "$3B revenue platform",
     description:
-      "Optimized Shopify's core platform for subscription-based businesses, leading cross-functional product development with engineering, design, go-to-market, and support teams. Shipped fraud protection for subscription payments within a 6-week cycle.",
-    impact: "$3B",
-    impactLabel: "Revenue Platform",
-    impactDetail: "Platform serving $3B in subscription commerce",
+      "Optimized Shopify's core platform for subscription-based businesses. Led cross-functional development with engineering, design, go-to-market, and support. Shipped fraud protection within a 6-week cycle.",
     tags: ["Platform", "Subscriptions", "Payments", "Fraud Prevention"],
+    period: "2022–2024",
   },
   {
+    number: "02",
     company: "Shopify",
-    year: "2022–2024",
     title: "Subscription Data Migration Tool",
+    impact: "$1.6M in revenue transferred",
     description:
-      "Championed end-to-end development from user interviews and project scoping through competitive analysis, feature prioritization, post-launch tracking and go-to-market documentation. Enabled subscription merchants to migrate from legacy tools.",
-    impact: "$1.6M",
-    impactLabel: "Revenue Transferred",
-    impactDetail: "Merchants migrated from legacy platforms to Shopify",
-    tags: ["0→1 Product", "B2B", "Data Migration", "User Research"],
+      "Led end-to-end development from user interviews and scoping through competitive analysis, feature prioritization, and go-to-market. Enabled merchants to migrate from legacy tools to Shopify.",
+    tags: ["0→1", "B2B", "Data Migration", "User Research"],
+    period: "2022–2024",
   },
   {
+    number: "03",
     company: "Shopify",
-    year: "2022–2024",
     title: "Checkout Delivery Options",
+    impact: "+$1.3M incremental revenue",
     description:
-      "Led the launch of new delivery options at checkout for subscription products by crafting product requirements, aligning stakeholders across checkout and shipping teams, managing risk, and overseeing deployment.",
-    impact: "+$1.3M",
-    impactLabel: "Incremental Revenue",
-    impactDetail: "New revenue stream added through checkout optimization",
-    tags: ["Checkout", "Subscriptions", "Revenue Growth", "Stakeholder Mgmt"],
+      "Launched new delivery options at checkout for subscription products. Crafted product requirements, aligned stakeholders across checkout and shipping teams, managed risk, and oversaw deployment.",
+    tags: ["Checkout", "Subscriptions", "Revenue Growth"],
+    period: "2022–2024",
   },
   {
+    number: "04",
     company: "Shopify Logistics",
-    year: "2022–2024",
-    title: "Supply Chain Forecasting & Vendor Selection",
+    title: "Supply Chain Forecasting",
+    impact: "95% forecast accuracy",
     description:
-      "Implemented new demand forecasting processes at warehouses and led a comprehensive vendor evaluation for supply chain planning software. Assessed 6+ vendors and delivered data-driven recommendations to the executive team.",
-    impact: "95%",
-    impactLabel: "Forecast Accuracy",
-    impactDetail: "30% reduction in excess inventory · $2M+ vendor decision",
+      "Implemented new demand forecasting processes reducing excess inventory by 30%. Led vendor evaluation for a $2M+ supply chain software investment across 6+ vendors.",
     tags: ["Supply Chain", "Operations", "Analytics", "Vendor Management"],
+    period: "2022–2024",
   },
 ];
 ---
 
-<section id="projects" class="py-28 max-w-6xl mx-auto px-6">
-  <!-- Section header -->
-  <div class="mb-16">
-    <span
-      class="text-xs font-semibold text-violet-400 tracking-[0.2em] uppercase"
-      >Featured Work</span
-    >
-    <h2
-      class="font-['Syne'] text-4xl md:text-5xl font-black text-zinc-100 mt-3 tracking-tight"
-    >
-      Products I've Shipped
+<section id="projects" class="py-24 border-t border-gray-100">
+  <div class="max-w-5xl mx-auto px-6">
+
+    <h2 class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-12">
+      Featured Work
     </h2>
-    <p class="text-zinc-500 mt-3 max-w-xl text-[15px]">
-      Selected highlights from my work — each driven by a customer problem and
-      measured by real business outcomes.
-    </p>
-  </div>
 
-  <!-- Projects grid -->
-  <div class="grid md:grid-cols-2 gap-5">
-    {
-      projects.map((project) => (
-        <div class="group relative p-8 rounded-2xl border bg-zinc-900/50 border-zinc-800 hover:border-violet-500/40 transition-all duration-300 hover:shadow-2xl hover:shadow-violet-500/5 cursor-default overflow-hidden">
-          <!-- Hover glow -->
-          <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-violet-600/5 to-cyan-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-
-          <!-- Company + year -->
-          <div class="flex items-center justify-between mb-5">
-            <span class="text-xs font-bold tracking-[0.15em] text-zinc-500 uppercase">
-              {project.company}
-            </span>
-            <span class="text-xs text-zinc-700 font-mono">{project.year}</span>
+    <div class="grid md:grid-cols-2 gap-px bg-gray-100">
+      {projects.map((project) => (
+        <div class="bg-white p-10 hover:bg-gray-50 transition-colors group">
+          <div class="flex items-start justify-between mb-6">
+            <span class="text-xs text-gray-300 font-medium">{project.number}</span>
+            <span class="text-xs text-gray-400">{project.period}</span>
           </div>
 
-          <!-- Impact metric — leads the card -->
-          <div class="mb-5">
-            <div class="flex items-baseline gap-2">
-              <span class="font-['Syne'] text-4xl font-black bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
-                {project.impact}
-              </span>
-              <span class="text-sm font-semibold text-zinc-400">
-                {project.impactLabel}
-              </span>
-            </div>
-            <p class="text-xs text-zinc-600 mt-0.5">{project.impactDetail}</p>
-          </div>
+          <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-2">
+            {project.company}
+          </p>
 
-          <!-- Title -->
-          <h3 class="font-['Syne'] text-xl font-bold text-zinc-100 mb-3">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3 leading-snug">
             {project.title}
           </h3>
 
-          <!-- Description -->
-          <p class="text-sm text-zinc-400 leading-relaxed mb-6">
+          <p class="text-sm font-medium text-gray-900 mb-4">
+            {project.impact}
+          </p>
+
+          <p class="text-sm text-gray-500 leading-relaxed mb-6">
             {project.description}
           </p>
 
-          <!-- Tags -->
           <div class="flex flex-wrap gap-2">
             {project.tags.map((tag) => (
-              <span class="px-3 py-1 text-xs font-medium bg-zinc-800/80 text-zinc-400 rounded-full border border-zinc-700/60">
+              <span class="text-xs text-gray-400 border border-gray-200 px-3 py-1">
                 {tag}
               </span>
             ))}
           </div>
         </div>
-      ))
-    }
+      ))}
+    </div>
+
   </div>
 </section>
